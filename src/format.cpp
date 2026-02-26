@@ -8,21 +8,19 @@
 #include <numeric>
 
 #define min(x, y)((x>y?y:x))
-
-using namespace Rcpp;
-typedef std::vector<unsigned int> vec;
+using vec = std::vector<unsigned int>;
 // Overload << for std::vector<T>
-template <typename T>
-std::ostream& operator<<(std::ostream& os, const std::vector<T>& vec) {
-  os << "[";
-  for (size_t i = 0; i < vec.size(); ++i) {
-    os << vec[i];
-    if (i + 1 != vec.size())
-      os << ", ";
-  }
-  os << "]\n";
-  return os;
-}
+// template <typename T>
+// std::ostream& operator<<(std::ostream& os, const std::vector<T>& v) {
+//   os << "[";
+//   for (size_t i = 0; i < v.size(); ++i) {
+//     os << v[i];
+//     if (i + 1 != vec.size())
+//       os << ", ";
+//   }
+//   os << "]\n";
+//   return os;
+// }
 
 int get_min_index(vec & nums){
 
@@ -56,7 +54,7 @@ public:
       throw std::runtime_error("p + q + 1 must equal length(nums)");
     if(std::ranges::any_of(nums, [](auto x){return  x > 9;}))
       throw std::runtime_error("nums must contain integers [0-9]");
-    if(std::ranges::all_of(nums, [](int x){return x == 0;}))
+    if(std::all_of(nums.begin(), nums.end(), [](int x){return x == 0;}))
       this->sign = 1;
     else this->sign = sign;
     this->p = p;
@@ -142,7 +140,8 @@ public:
 
 
 // [[Rcpp::export]]
-std::string my_format(int sign, unsigned int p, unsigned int q, vec nums) {
+std::string my_format(int sign, unsigned int p, unsigned int q,
+                      std::vector<unsigned int> nums) {
   PQnumber A(sign, p, q, nums);
   return A.repr;
 }

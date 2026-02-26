@@ -1,8 +1,9 @@
 {
     "args": [
-        "-std=gnu++17",
+        "-std=gnu++20",
         "-IC:/PROGRA~1/R/R-45~1.2/include",
         "-DNDEBUG",
+        "-IC:/Users/samon/AppData/Local/R/win-library/4.5/Rcpp/include",
         "-DEIGEN_DONT_VECTORIZE",
         "-nostdinc",
         "-Ic:/rtools44/x86_64~1.pos/bin/../lib/gcc/x86_64-w64-mingw32.static.posix/13.3.0/include/c++",
@@ -12,11 +13,11 @@
         "-Ic:/rtools44/x86_64~1.pos/bin/../lib/gcc/x86_64-w64-mingw32.static.posix/13.3.0/../../../../include",
         "-Ic:/rtools44/x86_64~1.pos/bin/../lib/gcc/x86_64-w64-mingw32.static.posix/13.3.0/include-fixed",
         "-include",
-        "C:/Work/school/Teach/stats102A/Winter2026/homeworks/homework06/pqnumber/pqnumber/.Rproj.user/5B22A159/compilation-database/mingw64/cpp-definitions.h"
+        "C:/Work/school/pqnumber/.Rproj.user/5B22A159/compilation-database/mingw64/cpp-definitions.h"
     ],
-    "pch": "",
+    "pch": "Rcpp",
     "is_cpp": true,
-    "hash": "17720492011772051013",
+    "hash": "177206068817720638131772061394",
     "compiler": "1391768606531529385",
     "rversion": "4.5.2",
     "dbversion": 4
