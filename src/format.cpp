@@ -1,3 +1,4 @@
+// [[Rcpp::plugins(cpp20)]]
 #include <Rcpp.h>
 #include <iostream>
 #include <vector>

@@ -1,8 +1,10 @@
+#' @importFrom Rcpp evalCpp
+NULL
+
+
 #' @useDynLib pqnumber, .registration = TRUE
 NULL
 
-#' @importFrom Rcpp evalCpp
-NULL
 
 #' Print a pqnumber in a good manner
 #' @param x a pqnumber
