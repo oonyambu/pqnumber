@@ -1,2 +1,0 @@
-# pqnumber
-print a pqnumber
